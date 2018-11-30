@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<controls:GradientContentPage NavigationPage.BackButtonTitle="" StartColor="{StaticResource dark_purple}" EndColor="{StaticResource dark_blue}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:Posy.Controls" x:Class="Posy.Pages.ResultPage" xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <Grid x:Name="MainGrid">
+        <StackLayout Margin="24" Spacing="0">
+            <Label x:Name="SubTitleLabel" Text="HERE ARE YOUR RESULTS" FontSize="16" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_yellow}" />
+            <Label x:Name="TitleLabel" Text="MOONBOY" FontSize="48" FontFamily="{StaticResource font_heavy}" TextColor="#ffffff" />
+            <controls:RoundedContentView x:Name="Card" Margin="0,24,0,0" BackgroundColor="{StaticResource white}" CornerRadius="8">
+                <StackLayout Padding="24" Spacing="8">
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="POSITION SIZE" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" LineBreakMode="TailTruncation" Text="{Binding SuggestedQuantity, StringFormat='{0:0.00} units'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="POSITION COST" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding PositionCost, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="POSITION RISK" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <Label VerticalOptions="Center" Text="{Binding PositionRisk, StringFormat='{0:0.00000000}'}" HorizontalOptions="EndAndExpand" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalOptions="Center" Text="TARGET GAIN" HorizontalOptions="Start" FontSize="12" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource light_purple}" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                            <Label VerticalOptions="Center" Text="{Binding TargetGain, StringFormat='{0:0.00000000}'}" FontSize="16" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                            <Label VerticalOptions="Center" Margin="8,0,0,0" Text="{Binding TargetGainPercentage, StringFormat='({0:0.00}%)'}" FontSize="14" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView Margin="0,16" HeightRequest="1" BackgroundColor="#DDDDDD" />
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding RiskPercentage, StringFormat='CURRENT RISK: {0:0.00}%'}" FontSize="16" FontFamily="{StaticResource font_heavy}" TextColor="{StaticResource dark_blue}" />
+                </StackLayout>
+            </controls:RoundedContentView>
+        </StackLayout>
+        <ff:CachedImage x:Name="MoonBoy" Source="moon.png" VerticalOptions="EndAndExpand" />
+    </Grid>
+</controls:GradientContentPage>

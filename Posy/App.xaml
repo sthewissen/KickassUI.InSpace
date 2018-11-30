@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Posy.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- The actual fonts -->
+            <OnPlatform x:Key="font_book" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/futura_book.ttf#FuturaBT-Book" />
+                <On Platform="iOS" Value="FuturaBT-Book" />
+            </OnPlatform>
+            <OnPlatform x:Key="font_medium" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/futura_medium.ttf#FuturaBT-Medium" />
+                <On Platform="iOS" Value="FuturaBT-Medium" />
+            </OnPlatform>
+            <OnPlatform x:Key="font_heavy" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/futura_heavy.ttf#FuturaBT-Heavy" />
+                <On Platform="iOS" Value="FuturaBT-Heavy" />
+            </OnPlatform>
+            <OnPlatform x:Key="font_extrablack" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/futura_extrablack.ttf#FuturaBT-ExtraBlack" />
+                <On Platform="iOS" Value="FuturaBT-ExtraBlack" />
+            </OnPlatform>
+            <!-- Primary colors -->
+            <Color x:Key="dark_purple">#301536</Color>
+            <Color x:Key="dark_blue">#1b1537</Color>
+            <Color x:Key="dark_yellow">#f3b998</Color>
+            <Color x:Key="white">#FFFFFF</Color>
+            <Color x:Key="light_purple">#7c7c99</Color>
+            <Color x:Key="medium_purple">#312141</Color>
+            <!-- Controls -->
+            <Style TargetType="{x:Type StackLayout}">
+                <Setter Property="Spacing" Value="0" />
+            </Style>
+            <Style TargetType="{x:Type Grid}">
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="ColumnSpacing" Value="0" />
+            </Style>
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource font_book}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource white}" />
+            </Style>
+            <Style TargetType="{x:Type Entry}">
+                <Setter Property="BackgroundColor" Value="{StaticResource medium_purple}" />
+                <Setter Property="FontFamily" Value="{StaticResource font_book}" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource white}" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                <Setter Property="TextColor" Value="#1b1537" />
+                <Setter Property="FontFamily" Value="{StaticResource font_heavy}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

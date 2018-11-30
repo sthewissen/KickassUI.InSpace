@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<controls:GradientContentPage NavigationPage.HasNavigationBar="false" NavigationPage.BackButtonTitle="" StartColor="{StaticResource dark_purple}" EndColor="{StaticResource dark_blue}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Posy" x:Class="Posy.Pages.MainPage" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="true" xmlns:controls="clr-namespace:Posy.Controls" xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <Grid x:Name="MainGrid">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="24" Spacing="0">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                <Label x:Name="WelcomeLabel" Text="WELCOME TO" FontSize="16" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_yellow}" />
+                <Label x:Name="PosyLabel" Text="POSY" FontSize="48" FontFamily="{StaticResource font_heavy}" TextColor="#ffffff" />
+                <!-- Place new controls here -->
+                <Label x:Name="IntroLabel" Margin="0,24,0,16" FontSize="15" FontFamily="{StaticResource font_book}" TextColor="#ffffff" Text="This tool lets you quickly calculate the optimal amount of units to buy based on your risk percentage and position size." />
+                <StackLayout x:Name="FormLayout" Spacing="16" VerticalOptions="CenterAndExpand">
+                    <Grid ColumnSpacing="16">
+                        <StackLayout Spacing="8" Grid.Column="0">
+                            <Label Text="RISK AMOUNT %" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                            <Entry Text="{Binding RiskPercentage}" Keyboard="Numeric" />
+                        </StackLayout>
+                        <StackLayout Spacing="8" Grid.Column="1">
+                            <Label Text="CAPITAL SIZE" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                            <Entry Text="{Binding CapitalSize}" Keyboard="Numeric" />
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout Spacing="8">
+                        <Label Text="ENTRY PRICE" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                        <Entry Text="{Binding EntryPrice}" Keyboard="Numeric" />
+                    </StackLayout>
+                    <StackLayout Spacing="8">
+                        <Label Text="STOP PRICE" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                        <Entry Text="{Binding StopPrice}" Keyboard="Numeric" />
+                    </StackLayout>
+                    <StackLayout Spacing="8">
+                        <Label Text="TARGET PRICE" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                        <Entry Text="{Binding TargetPrice}" Keyboard="Numeric" />
+                    </StackLayout>
+                </StackLayout>
+                    </StackLayout>
+                <Button x:Name="CalculateButton" Command="{Binding OpenResultCommand}" VerticalOptions="EndAndExpand" Text="CALCULATE" Margin="16" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</controls:GradientContentPage>
