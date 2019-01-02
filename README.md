@@ -1,4 +1,4 @@
-# Posy
+# KickassUI.InSpace
 
 A simple but good looking Xamarin.Forms UI screen as talked about in my blogpost on: https://www.thewissen.io/xamarin-forms-in-space/
 
